@@ -2,19 +2,10 @@
 python = "3.11"
 
 [phases.setup]
-nixPkgs = ["python311", "pip", "bash"]
+nixPkgs = ["python311", "pip"]
 
 [phases.install]
-cmds = [
-    "pip install --upgrade pip",
-    "pip install -r requirements.txt"
-]
-
-[phases.build]
-cmds = [
-    "echo 'Build phase completed'",
-    "chmod +x start.sh"
-]
+cmds = ["pip install -r requirements.txt"]
 
 [start]
-cmd = "./start.sh"
+cmd = "python omr_web_circle_scanner.py"
